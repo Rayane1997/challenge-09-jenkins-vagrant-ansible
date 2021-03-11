@@ -29,7 +29,7 @@ pipeline {
                ansiblePlaybook(
                       credentialsId: 'ssh_on_server_staging', 
                       inventory: 'hosts', 
-                      playbook: 'ansible/playbook-deploy-tomcat.yaml' )            
+                      playbook: 'ansible/playbook-deploy-staging.yaml' )            
             } 
         }        
     }
