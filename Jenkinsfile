@@ -26,10 +26,10 @@ pipeline {
                 
                 echo "====++++  Deploy WAR on staging using Ansible ++++===="
        
-               ansiblePlaybook   credentialsId: 'ssh-on-server-staging', 
-                      //extras: '-e version=${VERSION}', 
-                      //inventory: 'development', 
-                      playbook: 'playbook-deploy-tomcat.yaml'             
+               ansiblePlaybook(
+                      credentialsId: 'ssh-on-server-staging', 
+                      inventory: '../hosts', 
+                      playbook: 'playbook-deploy-tomcat.yaml' )            
             } 
         }        
     }
