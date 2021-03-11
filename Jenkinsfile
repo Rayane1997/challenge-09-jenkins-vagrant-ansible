@@ -10,7 +10,7 @@ pipeline {
         stage("Clone App from Git"){
             steps{
                 echo "====++++  Clone App from Git ++++===="
-                git branch:"master", url: "https://github.com/mromdhani/09-jenkins-cicd-pipeline-maven-04-vagrant-ansible.git"
+                git branch:"master", url: "https://github.com/Rayane1997/challenge-09-jenkins-vagrant-ansible.git"
             }          
         }
         // Build and Unit Test (Maven/JUnit)
@@ -29,7 +29,7 @@ pipeline {
                ansiblePlaybook(
                       credentialsId: 'ssh_on_server_staging', 
                       inventory: 'hosts', 
-                      playbook: 'playbook-deploy-staging.yaml' )            
+                      playbook: 'ansible/playbook-deploy-staging.yaml' )            
             } 
         }        
     }
